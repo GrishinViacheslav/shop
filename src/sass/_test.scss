@@ -1,0 +1,52 @@
+body {
+    background: #f00;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 1px;
+    box-sizing: border-box;
+
+    li {
+        display: block;
+        
+        + li {
+            margin-top: 0.5em;
+        }
+
+
+        body.with-sidebar & {
+            background: grey;
+        }
+    }
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-hover;
+    }
+
+    li > &:hover {
+        background: green;
+    }
+}
+
+.content {
+    width: $content-width;
+
+    .col-left {
+        width: $col-left;
+    }
+
+    .col-right {
+        width: $col-right;
+    }
+
+    @include make_link_darker(green, 20%);
+
+}
+
